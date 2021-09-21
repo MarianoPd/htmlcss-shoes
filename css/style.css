@@ -49,7 +49,9 @@ header li > a{
 /* Ogni section sarà grande quanto la view */
 section{
     height: 100vh;
-    width: 100vw;   
+    width: 100vw;  
+    z-index: -1;
+    position: relative; 
 }
 
 /*  vari colori ricercati */
@@ -66,30 +68,28 @@ section{
 }
 
 /* il container ci aiuta nel posizionamento dei suoi figli */
+
+.container, .image, .text{
+
+}
 div.container{
     width: 50%;
-    height: 100%;
-    margin: auto;
-    position: relative;
-        
-}
-
-/* sia per image che text usiamo position: absolute che ci aiuta nel posizionamento, potevamo usare i margin ma così è piu' figo */
-.image{
-    width: 100%;   
-    object-fit: contain;
-    position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin: 0 auto;
+    position: absolute;
+}
+
+.image{
+    object-fit: contain;
+    width: 100%;    
 }
 
 /* il font size si adatta alla dimensione dello schermo */
 .text{
     font-size: 6vh;
     text-align: center;
-    position: absolute;
-    top: 70%;
     color: yellow;
     text-transform: uppercase; /* non era necessario ma non l'avevo mai usato */
 }
